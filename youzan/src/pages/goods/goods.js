@@ -1,3 +1,4 @@
+import 'css/common.css'
 import './goods.css'
 import './goods_base.css'
 import './goods_common.css'
@@ -28,7 +29,7 @@ let app=new Vue({
         minnum:true,
         num:1,
         add:false,
-        
+        loading:false,
         success:'none'
     },
     created(){
@@ -39,9 +40,9 @@ let app=new Vue({
  
     methods:{
         getdetails(){
+            this.loading=true
             axios.get(url.detailsList).then((res)=>{
-                this.details=res.data.data
-             
+                this.details=res.data
                 this.banner=[]
                 this.details.imgs.forEach(function(e) {
                    let newlist={
@@ -50,6 +51,7 @@ let app=new Vue({
                     }
                     this.push(newlist)
                 },this.banner);
+                this.loading=false
             
             })
         },
@@ -59,7 +61,7 @@ let app=new Vue({
         getdeal(){
             axios.get(url.dealList).then((res)=>{
 
-                this.dealist=res.data.data.lists
+                this.dealist=res.data.lists
             
 
             })

@@ -26,15 +26,18 @@ let app =new Vue({
         this.getbanner()
     },
     methods:{
+        
         getlist(){
+              this.loading=true
             if(this.allloaded){
                 return
             }
-            this.loading=true
+          
             axios.get(url.hotLists,{
                 pageNum:this.pageNum,
                 pageSize:this.pageSize
             }).then(res=>{
+              
                let  currentlist=res.data.lists
                 if(currentlist.length<this.pageSize){
                     this.allloaded=true

@@ -40,8 +40,9 @@ export default{
       }
     },
     add(){
-      let{address,cityValue,districtValue,name,tel,provinceValue}=this
-      let data={address,cityValue,districtValue,name,tel,provinceValue}
+      
+      let{address,cityValue,districtName,districtValue,isDefault,name,tel,provinceValue,id}=this
+      let data={address,cityValue,districtName,districtValue,isDefault,name,tel,provinceValue,id}
       if(this.status=='add'){
         this.$store.dispatch('addAction',data)
         this.$router.go(-1)

@@ -18,23 +18,26 @@
 
 
 <script>
-
+var states=true
 export default{
  computed:{
    lists:function(){
-  
      return this.$store.state.lists
    }
  },
   created(){
-    this.$store.dispatch('initAction')
+    if(states){
+      states=false
+      this.$store.dispatch('initAction') 
+    }
   },
   methods:{
     editor(message){
         this.$router.push({name:'edit', query: { status: 'modify',instance:message}})
     },
  
-  }
+  },
+
 }
 
 </script>

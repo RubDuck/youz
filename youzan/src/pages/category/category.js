@@ -18,6 +18,7 @@ let category=new Vue({
         categoryList:'',
         rankList:'',
         topip:0,
+        loading:false,
 
     },
 
@@ -31,21 +32,22 @@ let category=new Vue({
     },
    methods:{
        gettoplist(){
+        this.loading=true
            axios.get(url.topList).then((res)=>{
                this.lists=res.data.lists
-               
+               this.loading=false
            })
        },
        getsubList(id){
            axios.get(url.subList).then((res)=>{
-               this.brandList=res.data.data.brandList
-               this.categoryList=res.data.data.categoryList
+               this.brandList=res.data.brandList
+               this.categoryList=res.data.categoryList
                this.topip=id
            })
        },
        getrankList(){
            axios.get(url.rankList).then((res)=>{
-               this.rankList=res.data.data
+               this.rankList=res.data
         
            })
 

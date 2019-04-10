@@ -16,7 +16,8 @@ let search=new Vue({
     data:{
         searchlist:'',
         keyword:keyword,
-        touch:false
+        touch:false,
+        loading:true
        
     },
     created(){
@@ -25,8 +26,11 @@ let search=new Vue({
     },
     methods:{
         search(){
+           
             axios.get(url.searchList,{keyword,id}).then((res)=>{
+                this.loading=false
                 this.searchlist=res.data.lists
+                
 
             })
             

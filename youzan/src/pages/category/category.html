@@ -51,7 +51,8 @@
       </div>
     </div>
     <div class="search-content" style="display: none;"></div>
-    <div class="content" style="height: 617px;">
+    <div class="loading-more" v-show='loading'><span></span></div>
+    <div class="content" style="height: 617px;" v-cloak>
       <div class="class-nav">
         <div id="scroll-nav" style="height: 100%;">
           <ul class="nav" id="scroll-nav-content" style="height: 540px; transform: translate3d(0px, 0px, 0px);">
@@ -73,7 +74,7 @@
                 </div>
                 <ul>
                   <li class="goods-item" v-for='(list,index) in rankList.hotGoods' v-if='rankList.hotGoods'>
-                    <a href="'./goods.html'+'?keyword='+list.id">
+                    <a href="###">
                       <div class="thumb badge center-img">
                         <img :src="list.img">
                         <span class="num">{{index+1}}</span>

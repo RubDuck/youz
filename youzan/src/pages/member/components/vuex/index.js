@@ -19,12 +19,12 @@ const store = new Vuex.Store({
             
         },
         modify(state,data){
-            let lists=state.lists
-            console.log(lists)
-            let index=lists.findIndex(item=>{
+           console.log(data)
+            console.log(state.lists,222)
+            let index=state.lists.findIndex(item=>{
                 return item.id ==data.id
             })
-            lists[index]=data
+            state.lists.splice(index,1,data)
 
         },
         remove(state,id){

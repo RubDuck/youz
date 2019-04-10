@@ -10,16 +10,18 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="cleartype" content="on">
   <meta name="referrer" content="always">
-  <script src="./goods.js"></script>
   <link rel="shortcut icon" href="https://b.yzcdn.cn/v2/image/yz_fc.ico">
   <title>商品详情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="goods.js"></script>
 </head>
 
 <body class=" body-fixed-bottom
             default-theme">
 <div class="goods">
-
+    <div class="loading-more" v-show='loading'><span></span></div> 
+  <div v-cloak>
+ 
   <div class="container wap-goods internal-purchase" style="min-height: 617px;">
     <div class="content no-sidebar">
       <div class="content-body">
@@ -233,7 +235,7 @@
     <div class="sku-layout-title name-card sku-name-card">
       <div class="thumb"><img class="js-goods-thumb goods-thumb" src="https://img.yzcdn.cn/upload_files/2017/07/12/FkSvYz8FLLD9-t0smXO43hF6ov7S.jpg?imageView2/2/w/100/h/100/q/75/format/webp?imageView2/2/w/100/h/100/q/75/format/webp" alt=""></div>
       <div class="detail goods-base-info clearfix">
-        <p class="title c-black ellipsis">寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-11斤</p>
+        <p class="title c-black ellipsis">寻找田野|最正宗的上海南汇8424 得奖最多奥运会指定西瓜1只/箱 9-111111斤</p>
         <div class="goods-price clearfix">
           <div class="current-price pull-left c-black">
             <span class="price-name pull-left font-size-14 c-orange">¥</span><i class="js-goods-price price font-size-16 vertical-middle c-orange">98.00</i>
@@ -321,6 +323,7 @@
 </transition>
   <div class="motify" :style={display:success}>
     <div class="motify-inner">已成功添加到购物车</div>
+  </div>
   </div>
 </div>
 

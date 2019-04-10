@@ -2,7 +2,7 @@
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <div class="swp-page swiper-slide" v-for='list in bannerlists'>
-              <a class="js-no-follow"  v-bind:href="list.clickUrl">
+              <a class="js-no-follow" >
                 <img class="goods-main-photo fadeIn" :src="list.img">
               </a>
             </div>

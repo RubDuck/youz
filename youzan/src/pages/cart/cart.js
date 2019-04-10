@@ -20,7 +20,8 @@ let app= new Vue({
         checked:'',
         all:false,
         total:0,
-        rmall:false
+        rmall:false,
+        loading:false
        
     },
     created(){
@@ -28,7 +29,9 @@ let app= new Vue({
     },
     methods:{
         getcartList(){
+            this.loading=true
             axios.get(url.cartList).then((res)=>{
+        
                  let cartlist=res.data.cartList
                 cartlist.forEach(ress => {
                     ress.checked=true
@@ -40,6 +43,7 @@ let app= new Vue({
                     })
                 })
                 this.cartlist=cartlist
+                this.loading=false
             })
         },
         checkbot(buystatue,goods,shop){
@@ -95,9 +99,11 @@ let app= new Vue({
         reducegoods(goods){
             Cart.reduce(goods.id).then(res=>{
                 if (goods.number==1){
+                    console.log(11)
                     return
                 }
                 else{
+                    console.log(-11)
                     goods.number-=1
                 }
             })        

@@ -19,7 +19,9 @@
 
 <body class=" body-fixed-bottom" style="">
   <div class="app">
-  <div class="container " style="min-height: 581px;">
+  <div class="loading-more" v-show='loading'><span></span></div>
+  <div v-cloak>
+  <div class="container " style="min-height: 581px;" >
     <div class="content clearfix js-page-content">
       <div id="cart-container">
         <div>
@@ -50,10 +52,10 @@
                     
                     </div>
                       <div class="name-card clearfix">
-                        <a href="https://h5.youzan.com/v2/showcase/goods?alias=2oivacpjh2ex0" class="thumb js-goods-link"><img :src="goods.img">
+                        <a href="###" class="thumb js-goods-link"><img :src="goods.img">
                           <!---->
                         </a>
-                        <div class="detail"><a href="https://h5.youzan.com/v2/showcase/goods?alias=2oivacpjh2ex0" class="js-goods-link"><h3 class="title js-ellipsis"><i>{{goods.title}}</i></h3></a>
+                        <div class="detail"><a href="###" class="js-goods-link"><h3 class="title js-ellipsis"><i>{{goods.title}}</i></h3></a>
                           <p class="sku ellipsis">
                             {{goods.sku}}
                           </p>
@@ -118,6 +120,7 @@
    
   </div>
   <foot></foot>
+</div>
 </div>
 </body>
 

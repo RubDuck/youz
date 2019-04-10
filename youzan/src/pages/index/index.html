@@ -63,7 +63,7 @@
           <span class="lineblock-font">最热商品推荐</span>
         </div>
       </div>
-      <div class="hot-goods js-waterfull-wrap" data-src="">
+      <div class="hot-goods js-waterfull-wrap" data-src="" v-cloak>
         <ul class="js-list js-lazy" data-src=""
         v-infinite-scroll="getlist"
         infinite-scroll-disabled="loading"
@@ -82,9 +82,11 @@
             </div>
           </li>   
         </ul>
-        <div class="loading-more" v-show='loading'><span></span></div>
+  
       </div>
+    
       <div class="js-show-find category-guid" style="display: none;"></div>
+      <div class="loading-more" v-show='loading'><span></span></div>
     </div>
   </div>
    <foot></foot>

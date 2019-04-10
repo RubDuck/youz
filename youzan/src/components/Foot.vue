@@ -17,8 +17,10 @@ let massage=[
   {name:'我',icon:'icon-user',href:'./member.html'}
 ]
 
-let now=location.href.split('=')[1].replace(/[^0-9]/g,"");  
-console.log(now)
+if(location.href.split('=')[1]){
+  var now=location.href.split('=')[1].replace(/[^0-9]/g,"");  
+}
+
 
 export default{
 data(){
